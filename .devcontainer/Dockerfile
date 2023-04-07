@@ -9,6 +9,7 @@ RUN cd JUCE && \
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
-    libasound2-dev
+    libasound2-dev \
+    clang-format-11
 
 WORKDIR /plugin

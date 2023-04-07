@@ -9,11 +9,11 @@ if [ "$#" -ne 1 ]; then
     exit 1
 fi
 
-# Set the argument as X
-X=$1
-
 # Change to the provided directory
-cd "$X" || exit
+cd "$1" || exit
+
+# Format.
+clang-format-11 *.h *.cc -i
 
 # Configure the build, passing the JUCE install path
 cmake -B cmake-build -DCMAKE_PREFIX_PATH=/opt/juce -G Ninja
