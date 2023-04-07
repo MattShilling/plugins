@@ -13,3 +13,5 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     clang-format-11
 
 WORKDIR /plugin
+
+RUN echo "alias format='clang-format-11 **/*.h **/*.cc -i'" >> ~/.bashrc
